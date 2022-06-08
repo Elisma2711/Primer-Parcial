@@ -1,6 +1,6 @@
 <?php
 
-    class Conexion{
+    class Connect{
         public $IpDataBase;
         public $NombreDataBase;
         public $UserDataBase;

@@ -2,17 +2,18 @@
 
     require "Utils/autoload.php";
 
-    class ProductoControlador{
-        public static function Alta($nombre,$descirpcion,$stock){
-            $p = new ProductoModelo();
+    class CompraControlador{
+        public static function Alta($nombre,$apellido,$telefono,$email){
+            $p = new CompraModelo();
             $p -> Nombre = $nombre;
-            $p -> Descripcion = $descirpcion;
-            $p -> Stock = $stock;
+            $p -> Apellido = $apellido;
+            $p -> Telefono = $telefono;
+            $p -> Email = $email;
             $p -> Alta();
         }
 
         public static function Baja(){
-            
+
         }
 
         public static function Modificar(){
