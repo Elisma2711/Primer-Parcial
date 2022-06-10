@@ -16,20 +16,25 @@
         }
 
         public function Baja(){
-            $sql = "DELETE FROM compra WHERE id_persona = " . $this -> Id_Persona . " & id_producto =  " . $this -> Id_Producto . ";";
+            $sql = "DELETE FROM compra WHERE id_persona = " . $this -> Id_Persona . " AND id_producto =  " . $this -> Id_Producto . ";";
             $this -> conexionBaseDeDatos -> query($sql);
         }
 
-        // public function Modificar(){
-        //     $sql = "UPDATE compra  SET 
-        //     nombre = '" . $this -> Nombre . "',
-        //     descripcion = '" . $this -> Descripcion . "',
-        //     stock = " . $this -> Stock . "
-        //     WHERE id = " . $this -> Id;
-        // }
+        public function Modificar(){
+            $sql = "UPDATE compra  SET 
+            nombre = '" . $this -> Nombre . "',
+            descripcion = '" . $this -> Descripcion . "',
+            stock = " . $this -> Stock . "
+            WHERE id = " . $this -> Id;
+        }
 
         public function ListarUno(){
-            $sql = "SELECT * FROM compra WHERE id_producto = " . $this -> Id_Producto . " & id_persona = " . $this -> Id_Persona . ";";
+            $sql = "SELECT * 
+            FROM compra c, persona pe, producto pr 
+            WHERE c.id_persona = pe.id 
+            AND c.id_producto = pr.id
+            AND c.id_producto = " . $this -> Id_Producto . " 
+            AND c.id_persona = " . $this -> Id_Persona . ";";
             $this -> conexionBaseDeDatos -> query($sql);
         }
 
