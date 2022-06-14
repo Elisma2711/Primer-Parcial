@@ -21,17 +21,17 @@
         }
 
         public static function ListarUno(){
-            $p = new PersonaModelo(1234);
+            $p = new PersonaModelo(1);
             $personas = $p -> ListarTodos();
 
             $resultado = array();
-            foreach($personas as $elemento){
+            foreach($personas as $persona){
                 $a = array(
-                    'id' => $elemento -> Id,
-                    'nombre' => $elemento -> Nombre,
-                    'apellido' => $elemento -> Apellido,
-                    'telefono' => $elemento -> Telefono,
-                    'email' => $elemento -> Email
+                    'id' => $persona -> Id,
+                    'nombre' => $persona -> Nombre,
+                    'apellido' => $persona -> Apellido,
+                    'telefono' => $persona -> Telefono,
+                    'email' => $persona -> Email
                 );
                 array_push($resultado,$a);
             }

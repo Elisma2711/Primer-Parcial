@@ -18,8 +18,9 @@
         }
 
         public function Alta(){
+            echo "Llega hasta aca";
             $sql = "INSERT INTO persona (nombre,apellido,telefono,email) VALUES
-            '" . $this -> Nombre . "',
+            ('" . $this -> Nombre . "',
             '" . $this -> Apellido . "',
             " . $this -> Telefono . ",
             '" . $this -> Email . "');";
@@ -41,7 +42,7 @@
         }
 
         public function ListarUno(){
-            $sql = "SELECT * FROM persona WHERE id_persona = " . $this -> Id;
+            $sql = "SELECT * FROM persona WHERE id = " . $this -> Id;
             $fila = $this -> conexionBaseDeDatos -> query($sql);
 
             $this -> Id = $fila['id'];

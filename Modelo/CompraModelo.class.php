@@ -9,7 +9,7 @@
 
         public function Alta(){
             $sql = "INSERT INTO compra (id_persona,id_producto,fecha_hora) VALUES
-            '" . $this -> Id_Persona . "',
+            ('" . $this -> Id_Persona . "',
             '" . $this -> Id_Producto . "',
             " . $this -> Fecha_Hora . ");";
             $this -> conexionBaseDeDatos -> query($sql);

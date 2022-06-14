@@ -10,7 +10,7 @@
 
         public function Alta(){
             $sql = "INSERT INTO producto (nombre,descirpcion,stock) VALUES
-            '" . $this -> Nombre . "',
+            ('" . $this -> Nombre . "',
             '" . $this -> Descripcion . "',
             " . $this -> Stock . ");";
             $this -> conexionBaseDeDatos -> query($sql);
